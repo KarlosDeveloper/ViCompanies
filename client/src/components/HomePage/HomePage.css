@@ -1,0 +1,3 @@
+.btn {
+	@apply w-2/4 py-3 font-medium text-lg rounded-3xl duration-300;
+}

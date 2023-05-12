@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom'
 const UserStats = () => {
 	return (
 		<div className="w-full h-full flex items-center gap-2">
-			<div className="grid gap-1">
-				<Bar width={100} color={'7AA615'} text={'$2 000 000'} />
-				<div className="flex gap-1">
-					<Bar width={24} color={'89B2D0'} text={'195'} />
-					<Bar width={24} color={'B159CE'} text={'Lv. 34'} />
+			<div className="w-44 grid gap-1">
+				<Bar color={'bg-[#7AA615]'} text={'$2 000 000'} />
+				<div className="grid grid-cols-2 gap-1">
+					<Bar color={'bg-[#89B2D0]'} text={'195'} />
+					<Bar color={'bg-[#B159CE]'} text={'Lv. 34'} />
 				</div>
 			</div>
 			<Link className="h-full flex items-center">
