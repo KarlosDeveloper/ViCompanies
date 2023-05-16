@@ -1,34 +1,25 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { Login, Register } from '../components'
+import { AiOutlineCloseCircle } from 'react-icons/ai'
 
 const Auth = () => {
-	const [email, setEmail] = useState('')
-	const [nick, setNick] = useState('')
-	const [password, setPassword] = useState('')
-
-	const register = async e => {
-		e.preventDefault()
-
-		const res = await fetch('http://localhost:4000/register', {
-			method: 'POST',
-			body: JSON.stringify({ email, password, nick }),
-			headers: { 'Content-Type': 'application/json' },
-		})
-		res.json().then(data => {
-			if (data.status == 'OK') {
-				console.log(data.message)
-			} else {
-				console.log(data.error)
-			}
-		})
-	}
+	const [variant, setVariant] = useState('register')
 	return (
-		<div className="w-full h-screen flex justify-center items-center bg-[#3d3d3d]">
-			<form method="post" className="flex flex-col gap-5">
-				<input type="text" value={email} onChange={e => setEmail(e.target.value)} />
-				<input type="text" value={nick} onChange={e => setNick(e.target.value)} />
-				<input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-				<button onClick={register}>Wyslij</button>
-			</form>
+		<div className="relative w-full h-screen flex items-center justify-center">
+			<Link to={'/'}>
+				<AiOutlineCloseCircle size={40} className="absolute top-10 right-10 text-white" />
+			</Link>
+			<div className="w-[400px] h-auto py-12 rounded-xl bg-black bg-opacity-70">
+				{variant == 'register' ? <Register /> : <Login />}
+				<p
+					onClick={() => setVariant(variant == 'register' ? 'login' : 'register')}
+					className="text-white mt-6 ml-6 underline cursor-pointer">
+					{variant == 'register' ? 'Posiadasz już konto?' : 'Nie masz jeszcze konta?'}
+				</p>
+			</div>
+			<div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 -z-10"></div>
+			<img src="auth.jpg" alt="" className="absolute top-0 left-0 w-full h-full -z-20" />
 		</div>
 	)
 }

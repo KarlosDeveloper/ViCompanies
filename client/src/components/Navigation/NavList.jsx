@@ -5,23 +5,20 @@ import './Navigation.css'
 const NavList = () => {
 	return (
 		<ul>
-			<li className="">
-				<Link to={'/'}>Strona głowna</Link>
-			</li>
-			<li className="my-7">
+			<li className="mb-8">
 				<Link to={''}>Biblioteka</Link>
 			</li>
-			<li className="my-7">
+			<li className="my-8">
 				<Link to={''}>Encyklopedia</Link>
 			</li>
-			<li className="my-7">
+			<li className="my-8">
 				<Link to={''}>program referencyjny</Link>
 			</li>
-			<li className="my-7">
+			<li className="my-8">
 				<Link to={''}>Notatki</Link>
 			</li>
 			<li>
-				<Link to={''}>Wyloguj</Link>
+				<Link to={'/'}>Wyloguj</Link>
 			</li>
 		</ul>
 	)

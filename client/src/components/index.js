@@ -1,3 +1,5 @@
 import HomePage from './HomePage/HomePage'
 import Nav from './Navigation/Nav'
-export { HomePage, Nav }
+import Register from './AuthPage/Register'
+import Login from './AuthPage/Login'
+export { HomePage, Nav, Register, Login }

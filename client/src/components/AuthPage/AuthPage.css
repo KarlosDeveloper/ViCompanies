@@ -1,0 +1,7 @@
+.inputs {
+	@apply h-11 px-4 rounded-lg text-white border-2 border-white bg-transparent opacity-50 outline-none;
+}
+
+.inputs::placeholder {
+	@apply uppercase text-xs;
+}
