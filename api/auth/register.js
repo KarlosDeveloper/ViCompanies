@@ -7,7 +7,6 @@ require('../database')
 
 const salt = 10
 
-// Register
 const register = async (req, res) => {
 	const { email, password } = req.body
 	try {
@@ -16,9 +15,11 @@ const register = async (req, res) => {
 				email,
 				password: bcrypt.hashSync(password, salt),
 				nick: 'Nowy użytkownik',
-				image: '',
+				image:
+					'https://media.discordapp.net/attachments/769132843086381056/1110301241436815550/default-blue.png?width=256&height=256',
 				money: 10000,
 				level: 1,
+				stars: 0,
 			})
 
 			if (UserDoc) {
@@ -35,7 +36,7 @@ const register = async (req, res) => {
 		} else {
 			return res.json({ status: 'error', error: 'Pola muszą być uzupełnione' })
 		}
-	} catch (error) {
+	} catch {
 		return res.json({ status: 'error', error: 'Spróbuj pozniej' })
 	}
 }

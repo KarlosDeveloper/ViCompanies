@@ -4,7 +4,7 @@ import { Login, Register } from '../components'
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 
 const Auth = () => {
-	const [variant, setVariant] = useState('register')
+	const [variant, setVariant] = useState('login')
 	return (
 		<div className="relative w-full h-screen flex items-center justify-center">
 			<Link to={'/'}>

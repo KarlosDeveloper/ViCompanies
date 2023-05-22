@@ -4,7 +4,7 @@ import { Nav } from '../components/index'
 import { DATABASE_URL } from '../../env'
 import { UserContext } from '../UserContext'
 
-const Home = () => {
+const Company = () => {
 	const userCTX = useContext(UserContext)
 	const { setUser } = userCTX
 	const token = window.localStorage.getItem('token')
@@ -30,4 +30,4 @@ const Home = () => {
 	)
 }
 
-export default Home
+export default Company

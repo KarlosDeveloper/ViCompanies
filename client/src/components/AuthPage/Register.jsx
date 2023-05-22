@@ -22,16 +22,19 @@ const Register = () => {
 				headers: { 'Content-Type': 'application/json' },
 			})
 			res.json().then(data => {
-				if (data.status == 'OK') {
-					toast(data.message, {
+				const { status, message, error, token } = data
+				if (status == 'OK') {
+					window.localStorage.setItem('token', token)
+					setRedirect(true)
+					toast(message, {
 						type: 'success',
 					})
-					window.localStorage.setItem('token', data.token)
-					setRedirect(true)
 				} else {
-					toast(data.error, {
+					toast(error, {
 						type: 'error',
 					})
+					setEmail('')
+					setPassword('')
 				}
 			})
 		} else {

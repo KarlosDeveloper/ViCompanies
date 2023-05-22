@@ -1,8 +1,9 @@
 const express = require('express')
 const cors = require('cors')
-const jwt = require('jsonwebtoken')
 
 const register = require('./auth/register')
+const login = require('./auth/login')
+const getUser = require('./services/getUser')
 
 const app = express()
 app.use(express.urlencoded({ extended: false }))
@@ -22,6 +23,8 @@ app.use(
 )
 
 app.post('/register', register)
+app.post('/login', login)
+app.post('/getUser', getUser)
 
 app.listen(4000, () => {
 	console.log('Server running')

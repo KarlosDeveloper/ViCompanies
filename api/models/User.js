@@ -9,6 +9,7 @@ const userSchema = new Schema(
 		image: String,
 		money: Number,
 		level: Number,
+		stars: Number,
 	},
 	{
 		timestamps: true,
