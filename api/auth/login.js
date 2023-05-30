@@ -21,7 +21,6 @@ const login = async (req, res) => {
 					{
 						id: UserDoc._id,
 						email: UserDoc.email,
-						nick: UserDoc.nick,
 					},
 					process.env.JWT_SECRET
 				)

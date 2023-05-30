@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-const Bar = ({ width, color, text }) => {
+const Bar = ({ color, text, visible }) => {
 	return (
 		<Link>
-			<div className={`w-full h-5 flex justify-center rounded-lg font-medium text-sm text-white ${color}`}>{text}</div>
+			<div className={`w-full h-5 flex justify-center rounded-lg font-medium text-sm text-white ${color}`}>
+				{visible && <img src="https://d1fxy698ilbz6u.cloudfront.net/static/images/sim-boosts2.png" alt="" />}
+				{text}
+			</div>
 		</Link>
 	)
 }

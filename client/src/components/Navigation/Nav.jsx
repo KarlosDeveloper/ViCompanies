@@ -4,7 +4,7 @@ import UserStats from './UserStats'
 
 const Nav = () => {
 	return (
-		<div className="w-full h-14 flex items-center justify-around bg-zinc-800">
+		<div className="w-full h-14 flex items-center justify-around bg-zinc-800 z-10">
 			<div>
 				<HamburgerMenu />
 			</div>

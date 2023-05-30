@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Navigate } from 'react-router-dom'
-import { Nav } from '../components/index'
+import { Menu, Nav, CompanyProfil } from '../components/index'
 import { DATABASE_URL } from '../../env'
 import { UserContext } from '../UserContext'
 
@@ -18,14 +18,16 @@ const Company = () => {
 				headers: { 'Content-Type': 'application/json' },
 			}).then(res => {
 				res.json().then(data => {
-					setUser(data.UserDoc)
+					setUser(data.CompanyDoc)
 				})
 			})
 		}, [])
 	}
 	return (
-		<div>
+		<div className="relative min-h-screen w-full flex flex-col">
 			<Nav />
+			<CompanyProfil />
+			<Menu />
 		</div>
 	)
 }

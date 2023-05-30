@@ -28,17 +28,17 @@ const UserStats = () => {
 	const userCTX = useContext(UserContext)
 	const { user } = userCTX
 	const { money, level, stars, _id, image } = user
-	const test = splitNumber(money)
+	const totalMoney = splitNumber(money)
 	return (
 		<div className="w-full h-full flex items-center gap-2">
 			<div className="w-52 grid gap-1">
-				<Bar color={'bg-[#7AA615]'} text={test} />
+				<Bar color={'bg-[#7AA615]'} text={`$${totalMoney}`} />
 				<div className="grid grid-cols-2 gap-1">
-					<Bar color={'bg-[#89B2D0]'} text={stars} />
-					<Bar color={'bg-[#B159CE]'} text={level} />
+					<Bar color={'bg-[#89B2D0]'} text={`${stars}`} visible={true} />
+					<Bar color={'bg-[#B159CE]'} text={`Lv. ${level}`} />
 				</div>
 			</div>
-			<Link to={`company/:${_id}`} className="h-full flex items-center">
+			<Link to={`/company/:${_id}`} className="h-full flex items-center">
 				<img src={image} alt="" className="h-[85%] rounded-sm" />
 			</Link>
 		</div>
