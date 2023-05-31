@@ -1,4 +1,4 @@
-import react, { useContext } from 'react'
+import react, { useContext, useState } from 'react'
 import { UserContext } from '../../UserContext'
 import Block from './Block'
 import Profil from './Profil'
@@ -6,7 +6,7 @@ import Profil from './Profil'
 const LeftBlock = () => {
 	const userCTX = useContext(UserContext)
 	const { user } = userCTX
-	const { privateNote, publicNote, rank, rating, createdAt, companiesValue, buildingsValue } = user
+	const { privateNote, publicNote, rank, rating, createdAt, companiesValue, buildingsValue, country } = user
 
 	const date = new Date(createdAt)
 	const formattedDateTime = date.toLocaleString('pl-PL', {
@@ -18,20 +18,22 @@ const LeftBlock = () => {
 	return (
 		<div className="w-[30%] h-full">
 			<Profil />
-			<Block title={`Prywatne notatki:`} privateNote={privateNote} visible={true} />
+			<Block title={`Prywatne notatki`} note={privateNote} visible={true} />
 			<Block
 				title={'Informacje'}
 				privateNote={privateNote}
 				title1={'Ranking'}
 				title2={'Ocena'}
-				title3={'Data założenia'}
-				title4={'Tagi wyszukiwania'}
+				title3={'Kraj lub region'}
+				title4={'Data założenia'}
+				title5={'Tagi wyszukiwania'}
 				option1={`#${rank}`}
 				option2={rating}
-				option3={formattedDateTime}
-				option4={'tag'}
+				option3={country}
+				option4={formattedDateTime}
+				option5={'tag'}
 			/>
-			<Block title={`Opis firmy:`} privateNote={publicNote} visible={true} />
+			<Block title={`Opis firmy`} note={publicNote} visible={true} />
 			<Block
 				title={'Wycena'}
 				privateNote={privateNote}

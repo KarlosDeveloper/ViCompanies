@@ -31,6 +31,7 @@ const register = async (req, res) => {
 					privateNote: '',
 					publicNote: '',
 					companyLevel: 'Kontrahent',
+					country: 'n/a',
 					rating: 'D',
 					rank: Rank.length + 1,
 					companiesValue: 0,
