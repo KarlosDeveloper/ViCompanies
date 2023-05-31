@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Navigate } from 'react-router-dom'
 import { Menu, Nav, CompanyProfil } from '../components/index'
-import { DATABASE_URL } from '../../env'
 import { UserContext } from '../UserContext'
 
 const Company = () => {
