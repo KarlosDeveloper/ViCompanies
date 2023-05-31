@@ -3,7 +3,6 @@ import Input from './Input'
 import Button from './Button'
 
 import { toast } from 'react-toastify'
-import { DATABASE_URL } from '../../../env'
 import { Navigate } from 'react-router-dom'
 
 const Register = () => {

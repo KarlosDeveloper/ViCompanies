@@ -4,7 +4,6 @@ import { Navigate } from 'react-router-dom'
 import Input from './Input'
 import Button from './Button'
 import { toast } from 'react-toastify'
-import { DATABASE_URL } from '../../../env'
 
 const Login = () => {
 	const [email, setEmail] = useState('')

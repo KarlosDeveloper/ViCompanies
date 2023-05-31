@@ -4,6 +4,7 @@ const cors = require('cors')
 const register = require('./auth/register')
 const login = require('./auth/login')
 const getUser = require('./services/getUser')
+const rankUpdate = require('./services/rankUpdate')
 
 const app = express()
 app.use(express.urlencoded({ extended: false }))
@@ -25,6 +26,8 @@ app.use(
 app.post('/register', register)
 app.post('/login', login)
 app.post('/getUser', getUser)
+
+rankUpdate()
 
 app.listen(4000, () => {
 	console.log('Server running')
