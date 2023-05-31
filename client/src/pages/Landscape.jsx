@@ -11,7 +11,7 @@ const Home = () => {
 		return <Navigate to={'/'} />
 	} else {
 		useEffect(() => {
-			fetch(`${DATABASE_URL}/getUser`, {
+			fetch(`DATABASE_URL/getUser`, {
 				method: 'POST',
 				body: JSON.stringify({ token }),
 				headers: { 'Content-Type': 'application/json' },

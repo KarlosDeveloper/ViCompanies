@@ -13,7 +13,7 @@ const Login = () => {
 	const loginUser = async e => {
 		e.preventDefault()
 
-		const res = await fetch(`${DATABASE_URL}/login`, {
+		const res = await fetch(`${process.env.DATABASE_URL}/login`, {
 			method: 'POST',
 			body: JSON.stringify({ email, password }),
 			headers: { 'Content-Type': 'application/json' },
