@@ -15,7 +15,7 @@ const Register = () => {
 		e.preventDefault()
 
 		if (password === rePassword) {
-			const res = await fetch(`${DATABASE_URL}/register`, {
+			const res = await fetch(`${import.meta.env.VITE_DATABASE_URL}/register`, {
 				method: 'POST',
 				body: JSON.stringify({ email, password }),
 				headers: { 'Content-Type': 'application/json' },
