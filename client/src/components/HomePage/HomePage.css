@@ -1,5 +1,5 @@
 .btn {
-	@apply w-full py-3 font-medium text-lg rounded-3xl duration-300;
+	@apply w-full py-3 font-medium text-sm md:text-lg rounded-3xl duration-300;
 }
 
 .text-shadow {
