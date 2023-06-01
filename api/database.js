@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-require('dotenv').config()
 
 // Connect from Database
 module.exports = mongoose.connect(
