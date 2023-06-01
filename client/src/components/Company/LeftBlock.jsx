@@ -2,6 +2,7 @@ import react, { useContext, useState } from 'react'
 import { UserContext } from '../../UserContext'
 import Block from './Block'
 import Profil from './Profil'
+import Note from './Note'
 
 const LeftBlock = () => {
 	const userCTX = useContext(UserContext)
@@ -16,33 +17,33 @@ const LeftBlock = () => {
 	})
 
 	return (
-		<div className="w-[30%] h-full">
-			<Profil />
-			<Block title={`Prywatne notatki`} note={privateNote} visible={true} />
-			<Block
-				title={'Informacje'}
-				privateNote={privateNote}
-				title1={'Ranking'}
-				title2={'Ocena'}
-				title3={'Kraj lub region'}
-				title4={'Data założenia'}
-				title5={'Tagi wyszukiwania'}
-				option1={`#${rank}`}
-				option2={rating}
-				option3={country}
-				option4={formattedDateTime}
-				option5={'tag'}
-			/>
-			<Block title={`Opis firmy`} note={publicNote} visible={true} />
-			<Block
-				title={'Wycena'}
-				privateNote={privateNote}
-				title1={'Wartość przedsiębiorstwa'}
-				title2={'Wartość budynków'}
-				option1={`$${companiesValue}`}
-				option2={`$${buildingsValue}`}
-			/>
-		</div>
+			<div className="w-[30%] h-full">
+				<Profil />
+				<Note title={`Prywatne notatki`} note={privateNote} />
+				<Block
+					title={'Informacje'}
+					privateNote={privateNote}
+					title1={'Ranking'}
+					title2={'Ocena'}
+					title3={'Kraj lub region'}
+					title4={'Data założenia'}
+					title5={'Tagi wyszukiwania'}
+					option1={`#${rank}`}
+					option2={rating}
+					option3={country}
+					option4={formattedDateTime}
+					option5={'tag'}
+				/>
+				<Note title={`Opis firmy`} note={publicNote} />
+				<Block
+					title={'Wycena'}
+					privateNote={privateNote}
+					title1={'Wartość przedsiębiorstwa'}
+					title2={'Wartość budynków'}
+					option1={`$${companiesValue}`}
+					option2={`$${buildingsValue}`}
+				/>
+			</div>
 	)
 }
 

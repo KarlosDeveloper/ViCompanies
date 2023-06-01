@@ -23,8 +23,7 @@ const register = async (req, res) => {
 				const Rank = await Company.find()
 				await Company.create({
 					name: `Nowa Firma${number}`,
-					image:
-						'https://media.discordapp.net/attachments/769132843086381056/1110301241436815550/default-blue.png?width=256&height=256',
+					image: 'https://d1fxy698ilbz6u.cloudfront.net/logo/55cd7d09519bd6cf5436697c62fc4a54d84e09e5.png',
 					money: 10000,
 					level: 1,
 					stars: 0,
@@ -42,6 +41,7 @@ const register = async (req, res) => {
 					{
 						id: UserDoc._id,
 						email: UserDoc.email,
+						password: UserDoc.password,
 					},
 					process.env.JWT_SECRET
 				)

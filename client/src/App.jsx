@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Home, Landscape, Auth, Company } from './pages/index'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import AdminPanel from './pages/AdminPanel'
 
 function App() {
 	return (
@@ -25,6 +26,7 @@ function App() {
 					<Route path="/landscape" element={<Landscape />} />
 					<Route path="/company/:id" element={<Company />} />
 					<Route path="/auth" element={<Auth />} />
+					<Route path="/add-category" element={<AdminPanel />} />
 				</Routes>
 			</Router>
 		</UserContextProvider>
