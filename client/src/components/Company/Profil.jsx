@@ -16,9 +16,9 @@ const Profil = () => {
 				<img src={image} alt="" className="w-full rounded-sm" />
 			</div>
 			<div className="w-3/4 flex flex-col justify-center">
-				<p className="text-3xl font-semibold uppercase">{name}</p>
-				<p className="text-xl font-medium text-gray-400">{companyLevel}</p>
-				<div className="text-sm font-medium  text-blue-400 cursor-pointer uppercase">
+				<p className="text-xl md:text-3xl font-semibold uppercase">{name}</p>
+				<p className="text-lg md:text-xl font-medium text-gray-400">{companyLevel}</p>
+				<div className="text-xs md:text-sm font-medium  text-blue-400 cursor-pointer uppercase">
 					<div className="flex items-center hover:underline hover:text-blue-500 duration-300">
 						{copy ? <AiFillCheckCircle className="mr-1" /> : <AiFillCopy className="mr-1" />}
 						{copy ? (

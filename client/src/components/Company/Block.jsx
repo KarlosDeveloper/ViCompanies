@@ -4,8 +4,8 @@ const Block = ({ title, option1, option2, option3, option4, option5, title1, tit
 	return (
 		<>
 			<div className="w-full h-auto flex flex-col items-center bg-stone-900">
-				<div className="flex flex-col justify-center items-center p-3 text-sm">
-					<h2 className=" mb-5 text-sm font-semibold">{title}</h2>
+				<div className="flex flex-col justify-center items-center p-3 text-xs md:text-sm">
+					<h2 className=" mb-5 text-sm md:text-base font-semibold">{title}</h2>
 					<div className="flex">
 						<div className="text-left">
 							<h3>{title1}</h3>
