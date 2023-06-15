@@ -14,13 +14,12 @@ const Note = ({ title, note }) => {
 				<div
 					className={`relative w-full ${
 						note == '' && 'flex justify-center items-center hover:text-blue-400'
-					} min-h-[45px] max-h-[150px] p-3 bg-stone-800 hover:bg-stone-700 cursor-pointer duration-300`}
+					} min-h-[45px] max-h-[150px] bg-stone-800 hover:bg-stone-700 cursor-pointer duration-300`}
 					onClick={() => setIsOpen(prev => !prev)}>
 					{note != '' ? (
 						<>
-							<div className="absolute top-0 left-0 w-full h-full"></div>
 							<textarea
-								className="block w-full max-h-[120px] text-xs bg-transparent resize-none cursor-pointer"
+								className="block w-full h-auto max-h-[120px] px-3 py-1 text-xs bg-transparent resize-none cursor-pointer"
 								defaultValue={note}
 							/>
 						</>

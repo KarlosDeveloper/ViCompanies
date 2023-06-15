@@ -26,7 +26,7 @@ const HomePage = () => {
 			</div>
 			<div className="hidden md:flex"></div>
 			<div className="absolute top-0 left-0 w-full h-full bg-black opacity-40 -z-10"></div>
-			<img src="./Background.jpg" alt="" className="absolute h-full object-cover top-0 left-0 w-full -z-20" />
+			<img src="./Background.webp" alt="" className="absolute h-full object-cover top-0 left-0 w-full -z-20" />
 		</div>
 	)
 }

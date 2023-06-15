@@ -8,7 +8,7 @@ const Auth = () => {
 	return (
 		<div className="relative w-full h-screen flex items-center justify-center">
 			<Link to={'/'}>
-				<AiOutlineCloseCircle size={40} className="absolute top-10 right-10 text-white" />
+				<AiOutlineCloseCircle className="absolute top-[3%] right-[5%] md:right-[3%] lg:right-[2%] text-white text-4xl md:text-5xl" />
 			</Link>
 			<div className="w-[400px] h-auto py-12 rounded-xl bg-black bg-opacity-70">
 				{variant == 'register' ? <Register /> : <Login />}
@@ -19,7 +19,7 @@ const Auth = () => {
 				</p>
 			</div>
 			<div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 -z-10"></div>
-			<img src="auth.jpg" alt="" className="absolute top-0 left-0 w-full h-full -z-20" />
+			<img src="auth.webp" alt="" className="absolute top-0 left-0 w-full h-full -z-20" />
 		</div>
 	)
 }

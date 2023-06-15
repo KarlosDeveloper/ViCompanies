@@ -5,21 +5,23 @@ import { UserContext } from '../UserContext'
 
 const Home = () => {
 	const userCTX = useContext(UserContext)
-	const { setUser } = userCTX
+	const { user, setUser } = userCTX
 	const token = window.localStorage.getItem('token')
 	if (!token) {
 		return <Navigate to={'/'} />
 	} else {
 		useEffect(() => {
-			fetch(`${import.meta.env.VITE_DATABASE_URL}/getUser`, {
-				method: 'POST',
-				body: JSON.stringify({ token }),
-				headers: { 'Content-Type': 'application/json' },
-			}).then(res => {
-				res.json().then(data => {
-					setUser(data.CompanyDoc)
+			if (user.email == '') {
+				fetch(`${import.meta.env.VITE_DATABASE_URL}/getUser`, {
+					method: 'POST',
+					body: JSON.stringify({ token }),
+					headers: { 'Content-Type': 'application/json' },
+				}).then(res => {
+					res.json().then(data => {
+						setUser(data.CompanyDoc)
+					})
 				})
-			})
+			}
 		}, [])
 	}
 	return (
