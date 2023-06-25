@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { Navigate } from 'react-router-dom'
-import { Menu, Nav } from '../components/index'
+import { LandscapeMap, Menu, Nav } from '../components/index'
 import { UserContext } from '../UserContext'
 
 const Home = () => {
@@ -25,8 +25,11 @@ const Home = () => {
 		}, [])
 	}
 	return (
-		<div className="h-screen flex flex-col justify-between bg-[#3d3d3d]">
+		<div className="w-screen h-screen flex flex-col justify-between bg-[#3d3d3d] overflow-hidden">
 			<Nav />
+			<div className=" overflow-auto">
+				<LandscapeMap />
+			</div>
 			<Menu />
 		</div>
 	)

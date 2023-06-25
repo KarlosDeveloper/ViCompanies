@@ -4,5 +4,6 @@ import Login from './AuthPage/Login'
 import Nav from './Navigation/Nav'
 import Menu from './Menu/Menu'
 import CompanyProfil from './Company/CompanyProfil'
+import LandscapeMap from './Landscape/LandscapeMap'
 
-export { HomePage, Nav, Register, Login, Menu, CompanyProfil }
+export { HomePage, Nav, Register, Login, Menu, CompanyProfil, LandscapeMap }
