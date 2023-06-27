@@ -1,13 +1,21 @@
 import React from 'react'
-import ProductionBlock from './ProductionBlock'
-import FreeBlock from './FreeBlock'
+import Block from './Block'
+import Road from './Road'
 
 const LandscapeMap = () => {
 	return (
 		<div className="relative w-full max-w-[1200px] h-[710px] mx-auto mt-16">
-			<ProductionBlock top={'top-[121px]'} left={'left-[273px]'} />
-			<FreeBlock top={'top-[189px]'} left={'left-[155px]'} />
-			<ProductionBlock top={'top-[250px]'} left={'left-[50px]'} />
+			<Block top={'top-[127px]'} left={'left-[262px]'} type={1} />
+			<Block top={'top-[189px]'} left={'left-[155px]'} type={1} />
+			<Block top={'top-[250px]'} left={'left-[50px]'} type={1} />
+			<Road top={'top-[180px]'} left={'left-[302px]'} type={1} />
+			<Road top={'top-[272px]'} left={'left-[143px]'} type={1} />
+			<Block top={'top-[302px]'} left={'left-[220px]'} type={4} />
+			<Block top={'top-[355px]'} left={'left-[311px]'} type={5} />
+			<Road top={'top-[363px]'} left={'left-[175px]'} type={2} />
+			<Road top={'top-[455px]'} left={'left-[333px]'} type={2} />
+			<Block top={'top-[390px]'} left={'left-[72px]'} type={2} />
+			<Block top={'top-[443px]'} left={'left-[163px]'} type={2} />
 		</div>
 	)
 }
