@@ -3,7 +3,7 @@
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> description
+> It is a business simulator that involves developing your business in a particular field. The game is completely free to play.
 
 ### ✨ [Demo](https://vicompanies.netlify.app)
 
