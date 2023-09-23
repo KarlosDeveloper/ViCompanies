@@ -13,6 +13,12 @@
 npm install
 ```
 
+## run test
+
+```sh
+npm run dev
+```
+
 ## Author
 
 👤 **KarlosDeveloper**
