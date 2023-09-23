@@ -4,6 +4,12 @@ import Modal from './Modal'
 
 const Note = ({ title, note }) => {
 	const [isOpen, setIsOpen] = useState(false)
+	const modal = () => {
+		setInterval(function () {
+			setIsOpen(true)
+		}, 0)
+		setIsOpen(false)
+	}
 	return (
 		<>
 			{isOpen == true && <Modal type={title} state={isOpen} />}
@@ -14,14 +20,16 @@ const Note = ({ title, note }) => {
 				<div
 					className={`relative w-full ${
 						note == '' && 'flex justify-center items-center hover:text-blue-400'
-					} min-h-[45px] max-h-[150px] bg-stone-800 hover:bg-stone-700 cursor-pointer duration-300`}
-					onClick={() => setIsOpen(prev => !prev)}>
+					} h-[70px] bg-stone-800 hover:bg-stone-700 cursor-pointer duration-300`}
+					onClick={modal}>
 					{note != '' ? (
 						<>
 							<textarea
-								className="block w-full h-auto max-h-[120px] px-3 py-1 text-xs bg-transparent resize-none cursor-pointer"
+								className="w-full h-full px-3 py-2 text-xs bg-transparent cursor-pointer resize-none"
 								defaultValue={note}
+								onResize={false}
 							/>
+							<div className="absolute top-0 left-0 w-full h-full"></div>
 						</>
 					) : (
 						<>

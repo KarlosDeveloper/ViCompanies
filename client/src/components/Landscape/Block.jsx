@@ -33,12 +33,24 @@ const Block = ({ top, left, type }) => {
 					alt=""
 				/>
 			)}
+			{type == 6 && (
+				<img
+					src="https://d1fxy698ilbz6u.cloudfront.net/static/images/landscape/decorations/bases/concrete-0001.png"
+					alt=""
+				/>
+			)}
+			{type == 7 && (
+				<img
+					src="https://d1fxy698ilbz6u.cloudfront.net/static/images/landscape/decorations/bases/concrete-0100.png"
+					alt=""
+				/>
+			)}
 
-			{/* <img
+			<img
 				src="https://d1fxy698ilbz6u.cloudfront.net/static/images/landscape/powerplant-lvl2.png"
 				alt=""
-				className="absolute -bottom-[60px] left-[0]"
-			/> */}
+				className="absolute -bottom-[45px] -left-[]"
+			/>
 		</div>
 	)
 }

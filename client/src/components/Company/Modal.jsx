@@ -18,17 +18,16 @@ const Modal = ({ type, state }) => {
 		if (type == 1) {
 			//prywatne
 			console.log(type)
-			setIsOpen(false)
 		} else {
 			console.log(type)
 			//publiczne
-			setIsOpen(false)
 		}
+		setIsOpen(false)
 	}
 	return (
 		<>
 			{isOpen && (
-				<div className="w-full h-full">
+				<div>
 					<div className="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-3/4  w-[95%]  md:w-[30%] min-h-[300px] max-h-[500px] flex flex-col rounded-md bg-zinc-900 border-2 border-stone-800 z-10">
 						<div className="relative w-full h-7 items-center flex justify-center bg-zinc-800">
 							<p>{type}</p>
@@ -41,7 +40,6 @@ const Modal = ({ type, state }) => {
 							<textarea
 								className="w-full min-h-[220px] max-h-[400px] px-5 py-2 text-sm rounded bg-transparent border border-stone-800 focus:outline-none outline-none focus:border-stone-600 overflow-hidden"
 								defaultValue={type == 'Prywatne notatki' ? privNote : pubNote}
-								readOnly
 							/>
 						</div>
 						<div className="w-full flex justify-center pb-5">
