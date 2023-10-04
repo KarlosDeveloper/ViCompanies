@@ -27,7 +27,6 @@ const Note = ({ title, note }) => {
 							<textarea
 								className="w-full h-full px-3 py-2 text-xs bg-transparent cursor-pointer resize-none"
 								defaultValue={note}
-								onResize={false}
 							/>
 							<div className="absolute top-0 left-0 w-full h-full"></div>
 						</>

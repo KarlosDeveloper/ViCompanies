@@ -15,7 +15,6 @@ const AdminPanel = () => {
 			}).then(res => {
 				res.json().then(data => {
 					if (data.error === 403) {
-						console.log('poszlo')
 						setRedirect(true)
 					}
 				})

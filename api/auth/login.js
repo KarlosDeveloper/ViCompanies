@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken')
 
 require('dotenv').config()
 require('../database')
-const salt = 10
 
 const login = async (req, res) => {
 	const { email, password } = req.body

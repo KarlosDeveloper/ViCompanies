@@ -3,26 +3,29 @@ import { UserContext } from '../../UserContext'
 import { RxCross2 } from 'react-icons/rx'
 
 const Modal = ({ type, state }) => {
+	const token = window.localStorage.getItem('token')
 	const userCTX = useContext(UserContext)
 	const { user } = userCTX
-	const { privateNote, publicNote, _id } = user
+	const { privateNote, publicNote } = user
 	const [isOpen, setIsOpen] = useState(state)
 	const [privNote, setPrivNote] = useState(privateNote || 'Wpisz treść')
 	const [pubNote, setPubNote] = useState(publicNote || 'Wpisz treść')
+	const [note, setNote] = useState('')
 
-	const put = types => {
-		const type = types == 'Prywatne notatki' ? 1 : 2
+	const put = async types => {
 		// 1 - Private note
 		// 2- Public note
+		const type = types == 'Prywatne notatki' ? 1 : 2
 
-		if (type == 1) {
-			//prywatne
-			console.log(type)
-		} else {
-			console.log(type)
-			//publiczne
-		}
 		setIsOpen(false)
+		if (note != '') {
+			window.location.reload(false)
+			const res = await fetch(`${import.meta.env.VITE_DATABASE_URL}/putNote`, {
+				method: 'PUT',
+				body: JSON.stringify({ type, token, note }),
+				headers: { 'Content-Type': 'application/json' },
+			})
+		}
 	}
 	return (
 		<>
@@ -40,6 +43,7 @@ const Modal = ({ type, state }) => {
 							<textarea
 								className="w-full min-h-[220px] max-h-[400px] px-5 py-2 text-sm rounded bg-transparent border border-stone-800 focus:outline-none outline-none focus:border-stone-600 overflow-hidden"
 								defaultValue={type == 'Prywatne notatki' ? privNote : pubNote}
+								onChange={e => setNote(e.target.value)}
 							/>
 						</div>
 						<div className="w-full flex justify-center pb-5">

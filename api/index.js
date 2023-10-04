@@ -1,8 +1,12 @@
 const express = require('express')
 const cors = require('cors')
 
+// Auth
 const register = require('./auth/register')
 const login = require('./auth/login')
+// Company Profil
+const putNote = require('./services/putNote')
+// Other
 const getUser = require('./services/getUser')
 const getAdmin = require('./services/getAdmin')
 const rankUpdate = require('./services/rankUpdate')
@@ -28,6 +32,7 @@ app.use(
 
 app.post('/register', register)
 app.post('/login', login)
+app.put('/putNote', putNote)
 app.post('/getUser', getUser)
 app.post('/getAdmin', getAdmin)
 
